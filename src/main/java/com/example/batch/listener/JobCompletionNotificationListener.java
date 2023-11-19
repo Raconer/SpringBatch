@@ -22,14 +22,14 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 
     @Override
     public void beforeJob(JobExecution jobExecution) {
-        log.info("@Component -> JobExecutionListenerSupport.beforeJob(JobExecution jobExecution)");
+        log.info("6. @Component -> JobExecutionListenerSupport.beforeJob(JobExecution jobExecution)");
     }
 
     @Override
     public void afterJob(JobExecution jobExecution) {
         log.info("@Component -> JobExecutionListenerSupport.afterJob(JobExecution jobExecution)");
         if(jobExecution.getStatus() == BatchStatus.COMPLETED){
-            log.info("@Batch Finish And Check");
+            log.info("8. @Batch Finish And Check");
 
             jdbcTemplate.query("SELECT first_name, last_name FROM people",
                 (rs, row) -> new Person(

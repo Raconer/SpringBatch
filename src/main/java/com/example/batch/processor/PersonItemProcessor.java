@@ -13,7 +13,7 @@ public class PersonItemProcessor implements ItemProcessor<Person, Person> {
         final String lastName = person.getLastName().toUpperCase();
         final Person transformedPerson = new Person(firstName, lastName);
 
-        log.info("@ItemProcessor -> Converting (" + person + ") into (" + transformedPerson + ")");
+        log.info("7. @ItemProcessor -> Converting (" + person + ") into (" + transformedPerson + ")");
 
         return transformedPerson;
     }
