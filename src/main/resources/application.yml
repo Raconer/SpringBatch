@@ -1,0 +1,13 @@
+spring:
+  batch:
+    jdbc:
+      initialize-schema: always
+mybatis:
+  mapper-locations: classpath:/mybatis/mappers/**/*.xml
+  type-aliases-package: com.example.batch.entity
+  configuration:
+    log-impl: com.example.batch.log.CustomMyBatisLoggerImpl
+logging:
+  level:
+    org.mybatis: DEBUG
+    org.apache.ibatis: DEBUG

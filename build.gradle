@@ -17,8 +17,17 @@ repositories {
 
 dependencies {
 
-    implementation 'org.springframework.boot:spring-boot-starter-batch'
-    runtimeOnly 'org.hsqldb:hsqldb'
+    // Batch
+    implementation("org.springframework.boot:spring-boot-starter-batch")
+
+    // DB - MySql
+    runtimeOnly ("com.mysql:mysql-connector-j")
+
+    // Mybatis
+    implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.2")
+
+    // H2
+    runtimeOnly("com.h2database:h2")
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
