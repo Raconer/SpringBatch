@@ -1,6 +1,7 @@
 package com.example.batch.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,10 +14,8 @@ public class Person {
     private String lastName;
     private String firstName;
     public Person(){
-        log.info("@Data -> Person()");
     }
     public Person(String firstName, String lastName){
-        log.info("@Data -> Person(String firstName, String lastName)");
         this.firstName = firstName;
         this.lastName = lastName;
     }
