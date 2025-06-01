@@ -22,6 +22,8 @@ dependencies {
 
     // Mybatis
     implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.2")
+    implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.11.0")
+    implementation("org.hibernate:hibernate-entitymanager:5.6.15.Final")
 
     // H2
     runtimeOnly("com.h2database:h2")

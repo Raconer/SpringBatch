@@ -43,7 +43,7 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
         log.info("🎉 [AFTER_JOB] Job 종료 후 처리: afterJob 실행됨 (JobExecution 상태: {})", jobExecution.getStatus());
 
         // Job이 정상적으로 완료된 경우
-        if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
+       /* if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
             log.info("\uD83C\uDF89 [AFTER_JOB] 배치 작업 완료: people 테이블에서 결과 데이터 확인 시작");
 
             jdbcTemplate.query("SELECT first_name, last_name FROM people",
@@ -51,7 +51,7 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
                             rs.getString(1),
                             rs.getString(2))
             );
-        }
+        }*/
 
         log.info("::::::::::::::::::Spring Batch Job End::::::::::::::::::");
     }

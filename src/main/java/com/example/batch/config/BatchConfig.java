@@ -63,7 +63,7 @@ public class BatchConfig {
         log.info("[SETUP] JdbcBatchItemWriter<Person> 빈 등록: Person 데이터를 people 테이블에 배치 삽입합니다.");
         return new MyBatisBatchItemWriterBuilder<Person>()
                 .sqlSessionFactory(sqlSessionFactory)
-                .statementId("com.example.batch.mapper.PersonMapper.insert")
+                .statementId("com.example.batch.mappers.PersonMapper.insert")
                 .build(); // MyBatisBatchItemWriter<Person> 인스턴스 생성
     }
 
