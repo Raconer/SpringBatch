@@ -1,8 +1,4 @@
 spring:
-  datasource:
-    url: jdbc:p6spy:h2:mem:testdb;DB_CLOSE_DELAY=-1
-    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
-    username: sa
   batch:
     jdbc:
       initialize-schema: always
@@ -14,7 +10,3 @@ decorator:
   datasource:
     p6spy:
       enable-logging: true
-logging:
-  level:
-    p6spy: DEBUG
-    com.p6spy: DEBUG

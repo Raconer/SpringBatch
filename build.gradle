@@ -20,6 +20,9 @@ dependencies {
     // Batch
     implementation("org.springframework.boot:spring-boot-starter-batch")
 
+    // DB - MySql
+    runtimeOnly ("com.mysql:mysql-connector-j")
+
     // Mybatis
     implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.2")
     implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.11.0")
