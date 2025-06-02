@@ -1,4 +1,4 @@
-package com.example.batch.log;
+package com.example.batch.core.log;
 
 import org.apache.ibatis.logging.stdout.StdOutImpl;
 

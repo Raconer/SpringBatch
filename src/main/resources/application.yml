@@ -6,7 +6,7 @@ mybatis:
   mapper-locations: classpath:/mybatis/mappers/**/*.xml
   type-aliases-package: com.example.batch.domain
   configuration:
-    log-impl: com.example.batch.log.CustomMyBatisLoggerImpl
+    log-impl: com.example.batch.core.log.CustomMyBatisLoggerImpl
 logging:
   level:
     org.mybatis: DEBUG
