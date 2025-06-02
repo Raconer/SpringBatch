@@ -1,18 +1,30 @@
 package com.example.batch.job.importUser;
 
+import com.example.batch.domain.person.mapper.PersonMapper;
 import com.example.batch.domain.person.model.Person;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.batch.MyBatisBatchItemWriter;
 import org.mybatis.spring.batch.builder.MyBatisBatchItemWriterBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.batch.item.ItemWriter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
-public class UserWriter {
+public class UserWriter implements ItemWriter<Person> {
     private static final Logger log = LoggerFactory.getLogger(UserWriter.class);
+
+    private final PersonMapper personMapper;
+
+    public UserWriter(PersonMapper personMapper) {
+        this.personMapper = personMapper;
+    }
+
 
     /**
      * JdbcBatchItemWriter<Person> 빈을 생성하여 Spring Batch에서 Person 데이터를 people 테이블에 일괄 삽입할 수 있도록 설정합니다.
@@ -23,12 +35,17 @@ public class UserWriter {
      * <p>
      * 이 Writer는 Chunk 기반 Step에서 ItemWriter로 사용됩니다.
      */
-    @Bean
+  /*  @Bean
     public MyBatisBatchItemWriter<Person> writer(SqlSessionFactory sqlSessionFactory) {
         log.info("[SETUP] JdbcBatchItemWriter<Person> 빈 등록: Person 데이터를 people 테이블에 배치 삽입합니다.");
         return new MyBatisBatchItemWriterBuilder<Person>()
                 .sqlSessionFactory(sqlSessionFactory)
-                .statementId("com.example.batch.domain.person.mapper.PersonMapper.insert")
+                .statementId("com.example.batch.domain.person.mapper.PersonMapper.insertList")
                 .build(); // MyBatisBatchItemWriter<Person> 인스턴스 생성
+    }*/
+
+    @Override
+    public void write(List<? extends Person> list) throws Exception {
+        personMapper.insertList(new ArrayList<>(list)); // 벌크 insert 호출
     }
 }

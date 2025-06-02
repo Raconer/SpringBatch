@@ -9,10 +9,9 @@ import org.slf4j.LoggerFactory;
 @Setter
 public class Person {
 
-    final static private Logger log = LoggerFactory.getLogger(Person.class);
-
     private String lastName;
     private String firstName;
+
     public Person(){
     }
     public Person(String firstName, String lastName){

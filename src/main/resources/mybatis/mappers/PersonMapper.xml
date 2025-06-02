@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.batch.domain.person.mapper.PersonMapper">
-    <insert id="insert" parameterType="com.example.batch.domain.person.model.Person" >
+
+    <insert id="insert" parameterType="Person" >
         INSERT INTO PEOPLE (first_name, last_name)
         VALUES (#{firstName}, #{lastName})
+    </insert>
+
+    <insert id="insertList" parameterType="java.util.List">
+        INSERT INTO PEOPLE (first_name, last_name)
+        VALUES
+        <foreach collection="list" item="person" separator=",">
+            (#{person.firstName}, #{person.lastName})
+        </foreach>
     </insert>
 </mapper>
