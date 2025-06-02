@@ -1,6 +1,6 @@
-package com.example.batch.mappers;
+package com.example.batch.domain.person.mapper;
 
-import com.example.batch.entity.Person;
+import com.example.batch.domain.person.model.Person;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

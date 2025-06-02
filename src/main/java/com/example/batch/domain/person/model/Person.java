@@ -1,4 +1,4 @@
-package com.example.batch.entity;
+package com.example.batch.domain.person.model;
 
 import lombok.Getter;
 import lombok.Setter;

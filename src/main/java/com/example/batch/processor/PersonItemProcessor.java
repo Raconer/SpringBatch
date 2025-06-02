@@ -1,6 +1,6 @@
 package com.example.batch.processor;
 
-import com.example.batch.entity.Person;
+import com.example.batch.domain.person.model.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
