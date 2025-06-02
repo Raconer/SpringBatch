@@ -19,14 +19,20 @@ public class BatchApplication {
 
     public static void main(String[] args) throws Exception {
         // 애플리케이션 실행 시작 로그
+        long start = System.currentTimeMillis();
         log.info("▶ BatchApplication 시작");
         // Spring 애플리케이션 실행 및 종료 코드 획득
         int exitCode = SpringApplication.exit(
                 SpringApplication.run(BatchApplication.class, args)
         );
 
-        // 종료 로그 출력
+        // 종료 시간 기록
+        long end = System.currentTimeMillis();
+        long elapsedMillis = end - start;
+        double elapsedSeconds = elapsedMillis / 1000.0;
+
         log.info("■ BatchApplication 종료 (exitCode: {})", exitCode);
+        log.info("⏱ 총 실행 시간: {}초 ({} ms)", String.format("%.2f", elapsedSeconds), elapsedMillis);
 
         // 실제 종료 수행
         System.exit(exitCode);

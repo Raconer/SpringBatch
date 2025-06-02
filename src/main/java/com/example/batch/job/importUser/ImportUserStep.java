@@ -40,7 +40,7 @@ public class ImportUserStep {
      * 이 Step은 Job의 구성 요소로 사용됩니다.
      */
     @Bean
-    public Step step(MyBatisBatchItemWriter<Person> writer) {
+    public Step step(UserWriter writer) {
         log.info("⚙️ [SETUP] Step 빈 생성: Person 데이터를 읽고 가공한 뒤 DB에 10개 단위로 일괄 삽입합니다.");
         return stepBuilderFactory.get("importUserStep")
                 .<Person, Person>chunk(10)
