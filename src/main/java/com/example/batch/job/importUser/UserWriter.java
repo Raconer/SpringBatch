@@ -2,14 +2,9 @@ package com.example.batch.job.importUser;
 
 import com.example.batch.domain.person.mapper.PersonMapper;
 import com.example.batch.domain.person.model.Person;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.batch.MyBatisBatchItemWriter;
-import org.mybatis.spring.batch.builder.MyBatisBatchItemWriterBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

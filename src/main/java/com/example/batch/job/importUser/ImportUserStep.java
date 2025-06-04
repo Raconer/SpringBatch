@@ -1,9 +1,7 @@
 package com.example.batch.job.importUser;
 
-import com.example.batch.config.BatchConfig;
 import com.example.batch.domain.person.model.Person;
 import com.example.batch.processor.PersonItemProcessor;
-import org.mybatis.spring.batch.MyBatisBatchItemWriter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.Step;

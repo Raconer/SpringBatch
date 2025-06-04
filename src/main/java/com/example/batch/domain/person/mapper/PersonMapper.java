@@ -2,7 +2,6 @@ package com.example.batch.domain.person.mapper;
 
 import com.example.batch.domain.person.model.Person;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 

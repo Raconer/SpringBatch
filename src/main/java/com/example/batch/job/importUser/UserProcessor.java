@@ -1,11 +1,9 @@
 package com.example.batch.job.importUser;
 
-import com.example.batch.config.BatchConfig;
 import com.example.batch.processor.PersonItemProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 @Component
