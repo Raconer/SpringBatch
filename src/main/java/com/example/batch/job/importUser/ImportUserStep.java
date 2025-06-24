@@ -41,7 +41,7 @@ public class ImportUserStep {
     public Step step(UserWriter writer) {
         log.info("⚙️ [SETUP] Step 빈 생성: Person 데이터를 읽고 가공한 뒤 DB에 10개 단위로 일괄 삽입합니다.");
         return stepBuilderFactory.get("importUserStep")
-                .<Person, Person>chunk(10000)
+                .<Person, Person>chunk(1)
                 .reader(reader)
                 .processor(processor)
                 .writer(writer)
