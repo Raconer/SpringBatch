@@ -121,25 +121,4 @@ Spring Boot의 `spring.profiles.active` 설정에 따라 서로 다른 데이터
 
 ## Batch 실행 순서
 
-> 일반적으로 배치 작업은 JobLauncher를 통해 실행되며, Job 내에 여러 개의 Step이 순차적으로 실행됩니다. 각 Step은 Reader, Processor, Writer를 통해 데이터를 읽고 가공한 뒤 저장하거나 출력합니다. JobExecution을 통해 각 작업의 실행 상태를 모니터링할 수 있습니다.
-
-0. **청크**
-    * 청크 사이즈 : 1500개 → 1500개당 1개의 쓰레드
-    * 병렬 처리 시 중요한 개념이다.
-1. **Job**
-    * 배치 작업의 가장 상위 단계인 Job을 정의합니다.
-    * Job은 하나 이상의 Step으로 구성됩니다.
-2. **Step**
-    * Job 내에서 하나의 Step은 하나의 단위 작업을 나타냅니다. 각 Step은 아래의 세부 단계로 구성됩니다.
-    * **Reader**: 데이터를 읽어오는 단계입니다. 예: 파일, DB 등
-    * **Processor**: 데이터를 가공하거나 변환하는 단계입니다. (선택)
-    * **Writer**: 데이터를 저장하거나 출력하는 단계입니다. 예: DB 저장
-3. **JobLauncher**
-    * Job을 실행하는 역할을 합니다.
-    * 주로 스케줄러나 REST API를 통해 JobLauncher를 호출하여 배치 작업을 시작합니다.
-4. **JobRepository**
-    * 배치 작업의 실행 상태를 추적하고 저장하는 데 사용됩니다.
-    * 이 정보는 장애 복구 및 모니터링에 유용합니다.
-5. **JobExecution**
-    * 각 Job의 실행에 대한 정보를 저장하며, 이를 통해 실행 결과를 확인할 수 있습니다.
-
+![Batch 실행 순서](./static/BatchProcess.png)
